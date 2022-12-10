@@ -1,0 +1,3 @@
+- src: git+ssh://git@gitlab.com/ansible-roles37/docker.git
+  version: master
+  name: docker 

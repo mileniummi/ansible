@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  web:
+    image: timurbabs/django
+    command: gunicorn locallibrary.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./django/:/usr/src/app/
+    ports:
+      - 8000:8000

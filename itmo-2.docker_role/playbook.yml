@@ -1,0 +1,11 @@
+---
+- name: Install docker and run django server 
+  hosts: app
+  become: true
+  roles:
+    - docker
+  tasks: 
+    - name: Clone django repo
+      git:
+        repo: "{{ django_git_repo }}"
+        dest: "{{ django_project_dir }}"

@@ -1,0 +1,29 @@
+---
+- name: Install docker and run django server 
+  become: true
+  hosts: app
+  roles:
+    - docker
+  tasks:
+    - name: copy docker-compose file
+      template:
+        src: "{{ item }}"
+        dest: django/
+        backup: "yes"
+      with_fileglob:
+        - "{{ docker_compose_file_path }}/*yml"
+    - name: run docker-compose
+      docker_compose:
+        project_src: django/
+        build: yes
+
+- name: Install nginx and conifgure reverse proxy
+  become: true
+  hosts: web
+  roles:
+    - nginx
+  tasks:
+    - name: copy django static files
+      copy:
+        src: "{{ django_static_files_dir }}"
+        dest: django/

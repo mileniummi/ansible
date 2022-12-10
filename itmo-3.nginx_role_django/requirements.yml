@@ -1,0 +1,7 @@
+- src: git+ssh://git@gitlab.com/ansible-roles37/docker.git
+  version: master
+  name: docker 
+
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-nginx-2.git
+  version: master
+  name: nginx

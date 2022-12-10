@@ -1,0 +1,62 @@
+---
+- name: Install docker and run django server 
+  hosts: app
+  become: true
+  tasks: 
+    - name: Install required system packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: present
+        update_cache: true
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+    
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: Docker login 
+      docker_login:
+        username: "{{ docker_username }}"
+        password: "{{ docker_password }}"
+
+    - name: Pull required docker image
+      docker_image:
+        name: "{{ docker_container_image }}"
+        source: pull
+
+    - name: Pull nginx docker image
+      docker_image:
+        name: nginx
+        source: pull
+
+    - name: Run docker container
+      docker_container:
+        name: "{{ docker_container_name }}"
+        image: "{{ docker_container_image }}"
+    
+    - name: Clone django repo
+      git:
+        repo: "{{ django_git_repo }}"
+        dest: "{{ django_project_dir }}"
