@@ -1,0 +1,6 @@
+---
+- name: Install openvpn
+  become: true
+  hosts: app
+  roles:
+    - openvpn

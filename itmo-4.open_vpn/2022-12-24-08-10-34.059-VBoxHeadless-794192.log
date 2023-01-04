@@ -1,0 +1,12 @@
+Log created: 2022-12-24T08:10:34.595424000Z
+Process ID:  794192 (0xc1e50)
+Parent PID:  1117 (0x45d)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: itmo-5postgresql_master_replica_srv1_1671565238876_59907
+Arg[3]: --startvm
+Arg[4]: 2bf59679-15f6-4065-8da7-6d285b8f2ae6
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2

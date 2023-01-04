@@ -1,0 +1,3 @@
+docker_container_image: timurbabs/django
+docker_compose_file_path: "{{ playbook_dir }}/templates/docker-compose"
+django_static_files_dir: "{{ playbook_dir }}/templates/static"
