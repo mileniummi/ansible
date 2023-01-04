@@ -1,0 +1,10 @@
+---
+- name: configure grafana
+  become: true
+  become_user: root
+  hosts: all
+  roles:
+    - docker
+    - grafana
+    - prometheus
+    - loki

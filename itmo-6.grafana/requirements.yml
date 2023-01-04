@@ -1,0 +1,15 @@
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-grafana.git
+  version: master
+  name: grafana 
+
+- src: git+ssh://git@gitlab.com/ansible-roles37/docker.git
+  version: master
+  name: docker 
+
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-prometheus.git
+  version: master
+  name: prometheus 
+  
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-loki.git
+  version: master
+  name: loki 
