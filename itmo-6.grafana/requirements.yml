@@ -13,3 +13,11 @@
 - src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-loki.git
   version: master
   name: loki 
+
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-promtail.git
+  version: master
+  name: promtail
+
+- src: git+ssh://git@gitlab.com/ansible-roles37/ansible-role-next-js.git
+  version: master
+  name: nextjs

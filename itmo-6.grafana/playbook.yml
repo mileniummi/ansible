@@ -1,10 +1,19 @@
 ---
+- name: configure nextjs server
+  become: true
+  become_user: root
+  hosts: app
+  roles:
+    - docker
+    - nextjs
+    - promtail
+
 - name: configure grafana
   become: true
   become_user: root
-  hosts: all
+  hosts: monitoring
   roles:
     - docker
     - grafana
-    - prometheus
+    - prometheus  
     - loki

@@ -1,0 +1,12 @@
+Log created: 2023-01-07T19:10:04.174983000Z
+Process ID:  6907 (0x1afb)
+Parent PID:  1304 (0x518)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: itmo-6grafana_srv1_1672920001614_69046
+Arg[3]: --startvm
+Arg[4]: 0965a273-a7b5-453e-9286-42658d753885
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
