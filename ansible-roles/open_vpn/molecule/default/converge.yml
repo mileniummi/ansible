@@ -1,7 +1,0 @@
----
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include kate.open_vpn"
-      include_role:
-        name: "open_vpn"
